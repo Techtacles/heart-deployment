@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HEART FAILURE PROBABILITY</title>
+</head>
+<body>
+<form action="{{ url_for("predict")}}" method="POST" >
+	<input type="text" name="time" placeholder="How many days ago did you visit the hospital" ><br><br>
+	<input type="text" name="ejection" placeholder="Ejection fraction level"><br><br>
+	<input type="text" name="serum" placeholder="Serum Creatinine value"><br><br>
+	<input type="text" name="age" placeholder="Age  of patient"><br><br>
+	<input type="text" name="platelets" placeholder="level of blood platelets"><br><br>
+	<input type="text" name="creatinine" placeholder="Creatinine phosphokinase"><br><br>
+	<input type="submit" class="btn" value="PREDICT PROBABILITY">
+              <p style="position: absolute;bottom: -5%;left: 50%;transform: translate(-50% , 50%); margin-top: 20px; "> {{ prediction_text}}</p>
+</form>
+
+{{ prediction_text}}
+</body>
+</html>
