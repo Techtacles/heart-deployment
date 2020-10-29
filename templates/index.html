@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<title>Go Medic</title>
-	<meta content=" Web Developer with a focus on Front-end and Mobile application." name="description">
-	<link rel="stylesheet" type="text/css" href="design.css">
+	<meta content=" Heart failure prediction" name="description">
+	<link rel="stylesheet" type="text/css" href="{{url_for("static",filename="design.css")}}">
 </head>
 <style type="text/css">
 	.user-box img{
@@ -20,11 +20,10 @@
 	
 </style>
 <body>
-	
 		<div class="login-box">
   			<h2></h2>
   			<div class="nim" style="display: flex; height: 120px;background-color: white;align-items: center;box-shadow: 0 15px 25px rgba(0,0,0,.6);border-radius: 0px 10px 10px 0px">
-				<img src="img/pnghut_honey-bee-vector-graphics-clip-art-image-invertebrate_09XcwKwP8g.png" style="background-color: #add0e4;position: relative;" height="100%" width="auto">
+				<img src="{{url_for("static",filename="img/pnghut_honey-bee-vector-graphics-clip-art-image-invertebrate_09XcwKwP8g.png")}}" style="background-color: #add0e4;position: relative;" height="100%" width="auto">
 				<p>
 				</p>
 			</div>
@@ -47,7 +46,7 @@
 </form>
 </div>
 </body>
-<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="{{url_for("static",filename="jquery.min.js")}}"></script>
 <script type="text/javascript">
 	$(document).ready(()=>{
 
