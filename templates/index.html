@@ -1,20 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>HEART FAILURE PROBABILITY</title>
+	<meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Go Medic</title>
+	<meta content=" Web Developer with a focus on Front-end and Mobile application." name="description">
+	<link rel="stylesheet" type="text/css" href="design.css">
 </head>
+<style type="text/css">
+	.user-box img{
+		right: -30%;
+		top: -20%;
+		position: absolute;
+		transform: ;
+	}
+	.user-box div{
+		position: relative;
+	}
+	
+</style>
 <body>
-<form action="{{ url_for("predict")}}" method="POST" >
-	<input type="text" name="time" placeholder="How many days ago did you visit the hospital" ><br><br>
-	<input type="text" name="ejection" placeholder="Ejection fraction level"><br><br>
-	<input type="text" name="serum" placeholder="Serum Creatinine value"><br><br>
-	<input type="text" name="age" placeholder="Age  of patient"><br><br>
-	<input type="text" name="platelets" placeholder="level of blood platelets"><br><br>
-	<input type="text" name="creatinine" placeholder="Creatinine phosphokinase"><br><br>
-	<input type="submit" class="btn" value="PREDICT PROBABILITY">
-              <p style="position: absolute;bottom: -5%;left: 50%;transform: translate(-50% , 50%); margin-top: 20px; "> {{ prediction_text}}</p>
-</form>
+	
+		<div class="login-box">
+  			<h2></h2>
+  			<div class="nim" style="display: flex; height: 120px;background-color: white;align-items: center;box-shadow: 0 15px 25px rgba(0,0,0,.6);border-radius: 0px 10px 10px 0px">
+				<img src="img/pnghut_honey-bee-vector-graphics-clip-art-image-invertebrate_09XcwKwP8g.png" style="background-color: #add0e4;position: relative;" height="100%" width="auto">
+				<p>
+				</p>
+			</div>
+			<br>
+			<br>
+			<br>
+  			<form action="{{ url_for("predict")}}" method="POST" id="myform">
+				<input type="text" class="ini" name="time" placeholder="Last check up" >
+				<input type="text" class="ini"  name="ejection" placeholder="Ejection fraction level" >
+				<input type="text" class="ini" name="serum" placeholder="Serum Creatinine value" >
+				<input type="text" class="ini" name="age" placeholder="Age  of patient" >
+				<input type="text" class="ini" name="platelets" placeholder="level of blood platelets" >
+				<input type="text" class="ini" name="creatinine" placeholder="Creatinine phosphokinase">
+				<a href="#" id="submit">
+      			
+      			Analyse
+    		</a> <br> <br> <br>
 
-{{ prediction_text}}
+              <p style="position: absolute;bottom: -5%;left: 50%;transform: translate(-50% , 50%); margin-top: 20px;    color: beige; "> {{ prediction_text}}</p>
+</form>
+</div>
 </body>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(()=>{
+
+	});
+	var tipsarray =['Most cardiovascular diseases can be prevented by addressing behavioural risk factors such as tobacco use, unhealthy diet and obesity, physical inactivity and harmful use of alcohol using population-wide strategies.' , 'Cardiovascular diseases (CVDs) are the number 1 cause of death globally, taking an estimated 17.9 million lives each year, which accounts for 31% of all deaths worlwide.' , '"People with cardiovascular disease or who are at high cardiovascular risk (due to the presence of one or more risk factors such as hypertension, diabetes, hyperlipidaemia or already established disease) need early detection and management wherein a machine learning model can be of great help.']
+	var inputarray = ['Many health care specialists recommend undergoing a complete medical checkup including heart checkup every year.' ,'Ejection fraction (EF) is a measurement, expressed as a percentage, of how much blood the left ventricle pumps out with each contraction. A healthy heart has an EF between 50 to 75 percent.' , 'A serum creatinine test measures the level of creatinine in your blood and provides an estimate of how well your kidneys filter (glomerular filtration rate).' , 'Adults age 65 and older are more likely than younger people to suffer from cardiovascular disease, which is problems with the heart, blood vessels, or both.' , 'A normal platelet count ranges from 150,000 to 450,000 platelets per microliter of blood. Having more than 450,000 platelets is a condition called thrombocytosis; having less than 150,000 is known as thrombocytopenia.']
+	var array = ['How many days ago did you visit the hospital?' , 'What is your Ejection fraction level? ' , 'What is your Serum Creatinine value?' , 'How old are you?' , 'What is the level of your blood platelets?', 'What is your Creatinine phosphokinase level? '];
+	$(document).filter('.ini').click(()=>{
+		$('.login-box h2').text('');
+	});
+	$('.ini').eq(0).click(()=>{
+		$(".nim p").html(inputarray[0])
+		$('.login-box h2').text(array[0]);
+	});
+	$('.ini').eq(1).click(()=>{
+		$(".nim p").html(inputarray[1])
+		$('.login-box h2').text(array[1]);
+	});
+	$('.ini').eq(2).click(()=>{
+		$(".nim p").html(inputarray[2])
+		$('.login-box h2').text(array[2]);
+	});
+	$('.ini').eq(3).click(()=>{
+		$(".nim p").html(inputarray[3])
+		$('.login-box h2').text(array[3]);
+	});
+	$('.ini').eq(4).click(()=>{
+		$(".nim p").html(inputarray[4])
+		$('.login-box h2').text(array[4]);
+	});
+	$('.ini').eq(5).click(()=>{
+		$(".nim p").html(inputarray[5]).fadeIn()
+		$('.login-box h2').text(array[5]);
+	});
+
+
+	
+
+</script>
+<script type="text/javascript">
+	var sub = document.getElementById('submit');
+	var myform = document.getElementById('myform');
+  	sub.addEventListener("click" , (e)=>{
+    	e.preventDefault();
+    	myform.submit();
+  	});
+</script>
 </html>

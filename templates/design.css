@@ -1,0 +1,174 @@
+/* Sass Decoration to assign color values*/
+:root {
+    --black--: #343a40;
+    --yellow--: #FFAD01;
+    --ash--: #f2f2f2;
+    --brown--:#887392;
+    --white--: #FFFFFF;
+    --blue--: #007bff;
+    --deepblue--: #0056b3;
+}
+/* Margin and Padding removal*/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    font-family: sans-serif;
+    background-image: url('img/elevated-view-stethoscope-blue-background.jpg');
+    background-size: cover;
+}
+html{
+    -webkit-tap-highlight-color: transparent;
+}
+* {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+form{
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  }
+.login-box {
+  position: absolute;
+  right: 7%;
+  width: 550px;
+  padding: 30px;
+  background: rgb(14 16 47);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+.nim p{
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;   
+  font-weight: 600; 
+  font-size: 13.5px;
+  line-height: 18px;
+  font-family: OpenSans,Arial,sans-serif;
+  color:rgb(14 16 47);
+}
+@media all and (max-width: 600px){
+	.login-box {
+  		position: absolute;
+  		top: 50%;
+  		left: 50%;
+  		right: 15%;
+  		width: 90%;
+  		padding: 40px;
+  		transform: translate(-50%, -50%);
+  		box-sizing: border-box;
+  		box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  		border-radius: 10px;
+	}
+}
+@media all and (max-width: 500px){
+  .nim p{
+    font-size: 70%;
+    font-weight: 400;
+  }
+}
+
+:placeholder{
+  display: none;
+}
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box input {
+  width: 95%;
+  padding: 10px 5px;
+  font-size: 80%;
+  font-family: sans-serif;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 4px;
+  border: 0.1px solid #add0e4;
+  outline: none;
+  background: transparent;
+}
+.login-box input:focus {
+   border: 2px solid #add0e4;
+}
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #add0e4;
+  color: ;
+  border-radius: 5px;
+  width: 200%;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 600; font-size: 16px;
+    line-height: 18px;
+    font-family: OpenSans,Arial,sans-serif;
+}
+
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+@media all and (max-width: 430px){
+  form{
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  .login-box {
+        position: absolute;
+        top: 53%;
+        left: 50%;
+        /* right: 15%; */
+        width: 90%;
+        margin: auto;
+        padding: 20px;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0,0,0,.6);
+        border-radius: 10px;
+  }
+  .login-box form a {
+    width: 100%;
+  }
+  .login-box input{
+    margin-bottom: 10px;
+  }
+}
