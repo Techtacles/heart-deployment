@@ -18,12 +18,13 @@ def predict():
     final=[np.array(int_features)]
     prediction=model3.predict_proba(final)
     pred=prediction.reshape(2,)[1]
+    pred2=np.round(pred,2)
    #output=round(prediction[0],2)
     #return render_template("index.html",prediction_text="The probability of heart failure is   {}".format(pred))
-    if pred >0.5:
-    	return render_template("index.html",prediction_text=f"Your probability of heart failure is {pred}.You have {pred*100}% chance of heart failure.You can reduce protein intake and cutback exercises to boost creatinine.")
+    if pred2 >0.5:
+    	return render_template("index.html",prediction_text=f"Your probability of heart failure is {pred2}.You have {pred2*100}% chance of heart failure.You can reduce protein intake and cutback exercises to boost creatinine.")
     else:
-    	return render_template("index.html",prediction_text=f" The probability of heart failure is  {pred}. You have {pred*100}. That's a normal range.You can regularize your protein intake and increase your intake of multi-vitamins to make your chances of heart failure even lower. ")
+    	return render_template("index.html",prediction_text=f" The probability of heart failure is  {pred2}. You have {pred2*100}%. That's a normal range.You can regularize your protein intake and increase your intake of multi-vitamins to make your chances of heart failure even lower. ")
 
 
 
